@@ -21,9 +21,7 @@
         @method('PUT')
 
         <div>   
-            <label for="penambah" class="block font-bold">Nama Penambah:</label>
-            <input type="text" id="penambah" name="penambah" value="{{ $penambahan->penambah}}" class="w-full border border-gray-300 rounded px-3 py-2">
-        </div>
+
 
         <div>
             <label for="NamaBar" class="block font-bold">Nama Barang:</label>

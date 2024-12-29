@@ -13,13 +13,25 @@
             Tambah Barang
         </H1>
         <br>
+        @if ($errors->any())
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
        <form method="POST"action="{{route('penambahan.post')}}">
             @csrf
             <div class="mb-4">
                 <label for="penambah" class="block text-gray-700 text-sm font-bold mb-2">Nama</label>
-                <input type="text" name="penambah" id="penambah" placeholder="ketik nama"
+                <input type="text" name="name" id="name" placeholder="ketik nama *gunakan nama akun"
                     class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('email') border-red-500 @enderror"
                      autofocus required>
+             @error('name')
+                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+              @enderror
                     
             </div>
 

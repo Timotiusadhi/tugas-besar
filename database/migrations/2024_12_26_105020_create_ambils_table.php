@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('ambils', function (Blueprint $table) {
             $table->id();
-            $table->string("pengambil");
+            $table->string("name");
             $table->string("AMbarang");
             $table->string("JUMbar");
+            $table->string("BERbar");
+            $table->string("Dateam");
             
             $table->timestamps();
         });
